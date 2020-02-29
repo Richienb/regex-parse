@@ -1,13 +1,11 @@
 const test = require("ava")
-const theModule = require(".")
+const regexParse = require("regex-parse");
 
-test("main", (t) => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number",
-	})
+test("regexParse", (t) => {
+	t.deepEqual(regexParse(/a/g), { main: "a", options: "g" })
+	t.deepEqual(regexParse("/a/g"), { main: "a", options: "g" })
+})
 
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+test("regexParse.from", (t) => {
+	t.is(regexParse.from({ main: "a", options: "g" }), /a/g)
 })

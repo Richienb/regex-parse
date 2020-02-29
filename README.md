@@ -1,41 +1,51 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Regex Parse [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/regex-parse/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/regex-parse)
 
-My awesome module.
+Parse a regex into it's individual parts.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/regex-parse.png)](https://npmjs.com/package/regex-parse)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install regex-parse
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const regexParse = require("regex-parse");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+regexParse(/a/g);
+//=> { main: "a", options: "g" }
+
+regexParse.from({ main: "a", options: "g" })
+//=> /a/g
 ```
 
 ## API
 
-### theModule(input, options?)
+### regexParse(regex)
 
-#### input
+#### regex
 
-Type: `string`
+Type: `RegExp | string`
 
-Lorem ipsum.
+The regex to parse.
+
+### regexParser.from(options)
 
 #### options
 
 Type: `object`
 
-##### postfix
+##### main
 
-Type: `string`\
-Default: `rainbows`
+Type: `string`
 
-Lorem ipsum.
+The first part of the regex.
+
+##### options
+
+Type: `string`
+
+The second part of the regex.
