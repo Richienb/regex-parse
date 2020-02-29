@@ -1,6 +1,6 @@
 {
 	"name": "regex-parse",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Parse a regex into it's individual parts.",
 	"repository": "https://github.com/Richienb/regex-parse.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
